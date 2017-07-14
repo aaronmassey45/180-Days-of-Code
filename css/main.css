@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css?family=Days+One|Rajdhani");
+html, body {
+  background: url('https://source.unsplash.com/9-4UVqxXqcY') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+header {
+  background: #130d85;
+  color: white;
+}
+
+.top {
+  margin-top: 25px;
+}
+
+#age, #ageMet, #lb, #kg, #cm, #ft, #in {
+  width: 50px;
+}
+
+#activity, #activityMet {
+  width: 175px;
+}
+
+.form {
+  padding: 15px;
+  background: ivory;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.jumbotron {
+  background: #d98957;
+  color: white;
+}
+
+.jumbotron p {
+  font-size: 15px;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.jumbotron h2 {
+  font-family: 'Days One', sans-serif;
+}
