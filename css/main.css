@@ -27,7 +27,7 @@ header {
 .form {
   padding: 15px;
   background: ivory;
-  position: absolute;
+  position: relative;
   border-radius: 5px;
 }
 
