@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dice Roller | 180 Websites</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/master.css">
+  <script src="js/jquery.js"></script>
+  <script src="js/bootstrap.js"></script>
+</head>
+
+<body>
+  <div class="container text-center">
+    <h2 class="value">Roll em!</h2>
+    <br><br>
+    <div class="dice">
+      <table>
+        <tr>
+          <td class="1_1"></td>
+          <td class="1_2"></td>
+          <td class="1_3"></td>
+        </tr>
+        <tr>
+          <td class="1_4"></td>
+          <td class="1_5"></td>
+          <td class="1_6"></td>
+        </tr>
+        <tr>
+          <td class="1_7"></td>
+          <td class="1_8"></td>
+          <td class="1_9"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="dice die2">
+      <table>
+        <tr>
+          <td class="2_1"></td>
+          <td class="2_2"></td>
+          <td class="2_3"></td>
+        </tr>
+        <tr>
+          <td class="2_4"></td>
+          <td class="2_5"></td>
+          <td class="2_6"></td>
+        </tr>
+        <tr>
+          <td class="2_7"></td>
+          <td class="2_8"></td>
+          <td class="2_9"></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <br>
+  <div class="container text-center">
+    <button type="button" class="btn btn-lg" name="button">Roll the Dice</button>
+  </div>
+
+  <footer class="container-fluid text-center navbar-fixed-bottom">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="http://aaronmassey.pro/">HOME</a></li>
+      <li><a href="https://medium.com/@aaronmassey45">BLOG</a></li>
+    </ul>
+  </footer>
+</body>
+
+<script type="text/javascript">
+  var val = 0;
+  $(document).ready(function() {
+    var num;
+
+    $("button").click(function() {
+      $("td").html("");
+      val = 0;
+      $("button").css( 'pointer-events', 'none' );
+      $(".dice").addClass("spin");
+      setTimeout(rollDie, 2000);
+    })
+  });
+
+  function rollDie() {
+    $("button").css( 'pointer-events', 'auto' );
+    for (var i = 1; i < 3; i++) {
+      num = Math.floor((Math.random() * 6) + 1);
+      val = val + num;
+      if (num === 1) {
+        $("." + i + "_5").html("<div class='dot'></div>");
+      } else if (num == 2) {
+        $("." + i + "_1,." + i + "_9").html("<div class='dot'></div>");
+      } else if (num == 3) {
+        $("." + i + "_1,." + i + "_5,." + i + "_9").html("<div class='dot'></div>");
+      } else if (num === 4) {
+        $("." + i + "_1,." + i + "_3,." + i + "_7,." + i + "_9").html("<div class='dot'></div>");
+      } else if (num === 5) {
+        $("." + i + "_1,." + i + "_3,." + i + "_5,." + i + "_7,." + i + "_9").html("<div class='dot'></div>");
+      } else if (num === 6) {
+        $("." + i + "_1,." + i + "_4,." + i + "_7,." + i + "_3,." + i + "_6,." + i + "_9").html("<div class='dot'></div>");
+      }
+    }
+    $(".value").text("You rolled a total of " + val);
+    $(".dice").removeClass("spin");
+  }
+</script>
+
+</html>

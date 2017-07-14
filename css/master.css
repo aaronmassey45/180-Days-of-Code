@@ -1,0 +1,74 @@
+html, body {
+  background-color: ivory;
+}
+.dice {
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.die2{
+  margin-left: 50px;
+}
+td {
+  height: 50px;
+  width: 50px;
+  padding: 8px;
+  border-radius: 5px;
+}
+.dot {
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  border-radius: 50%;
+}
+.spin {
+  -webkit-animation: spin 2s;
+	-moz-animation: spin 2s;
+	-ms-animation: spin 2s;
+	animation: spin 2s;
+}
+
+footer {
+  background: black;
+  color: white;
+}
+
+@-webkit-keyframes spin {
+	0% {-webkit-transform: rotate(0deg)}
+	8% {-webkit-transform: rotate(-50deg)}
+	12% {-webkit-transform: rotate(-50deg) }
+	100% {-webkit-transform: rotate(3600deg)}
+}
+
+@-moz-keyframes spin {
+	0% {-moz-transform: rotate(0deg)}
+	8% {-moz-transform: rotate(-50deg)}
+	12% {-moz-transform: rotate(-50deg) }
+	100% {-moz-transform: rotate(3600deg)}
+}
+
+@-o-keyframes spin {
+	0% {-o-transform: rotate(0deg)}
+	8% {-o-transform: rotate(-50deg)}
+	12% {-o-transform: rotate(-50deg) }
+	100% {-o-transform: rotate(3600deg)}
+}
+
+@-ms-keyframes spin {
+	0% {-ms-transform: rotate(0deg)}
+	8% {-ms-transform: rotate(-50deg)}
+	12% {-ms-transform: rotate(-50deg) }
+	100% {-ms-transform: rotate(3600deg)}
+}
+
+@keyframes spin {
+	0% {transform: rotate(0deg)}
+	8% {transform: rotate(-50deg)}
+	12% {transform: rotate(-50deg) }
+	100% {transform: rotate(3600deg)}
+}
