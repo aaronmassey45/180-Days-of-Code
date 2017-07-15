@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Rock+Salt");
+html,body,main {
+  background: #ffa536;
+}
+.navbar-inverse {
+  border-radius: 0;
+  padding: 15px;
+  font-size: 17px;
+  font-family: 'Rock Salt', cursive;
+}
+
+.img-responsive {
+  margin: 0 auto;
+}
+.text{
+  font-family: 'Anton', sans-serif;
+}
+
+.portal, .mortyfied, button {
+  display: block;
+  margin: auto;
+}
+
+@media screen and (min-width: 700px) {
+  body {
+    overflow: hidden;
+  }
+  .imgs {
+    height:1000px;
+  }
+}
+
+.mortyfied {
+  -webkit-transition: -webkit-transform 3s;
+}
+
+.col-sm-3 {
+  font-size: 15px;
+}
+
+.rotate {
+  animation: rotate 10s linear infinite;
+}
+.shrink {
+  animation: shrink 3s forwards linear;
+}
+.fflip {
+  animation: fflip 2s linear;
+}
+.bflip {
+  animation: bflip 2s linear;
+}
+.top2bot{
+  animation: top2 3s linear;
+}
+
+
+@keyframes rotate {
+  0% {position: relative;transform: rotate(0);}
+  100% {position: relative;transform: rotate(360deg);}
+}
+@keyframes bflip {
+  0% {position: relative;transform: rotate(0);}
+  100% {position: relative;transform: rotate(360deg);}
+}
+
+@keyframes shrink {
+  0% {transform: scale(1);}
+  50% {transform: scale(.1,0);}
+  100 {transform: scale(1,0);}
+}
+@keyframes fflip {
+  0% {transform: rotate(0);}
+  100% {transform: rotate(-360deg);}
+}
+@keyframes top2 {
+  0% {position: relative;top: 00px;}
+  100% {position: relative; top: 1000px;}
+}
