@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>To-Do | 180 Websites</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/bootstrap.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <button class="navbar-toggle btn btn-info" data-toggle="collapse" data-target="#myNavbar">
+                Menu <i class="fa fa-bars" aria-hidden="true"></i>
+              </button>
+          <a class="navbar-brand" href="http://aaronmassey.pro/">The Aaron Massey Project</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://medium.com/@aaronmassey45">Blog</a></li>
+            <li><a href="https://github.com/aaronmassey45">Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div id="overlay">
+      <div id="close">&times;</div>
+      <div id="text" class="container"></div>
+    </div>
+    <div class="container">
+      <div id="stuff" class="text-center">
+        <h1>Teleprompter!</h1>
+        <h4 class="center">Enter your text below to have it displayed in the teleprompter. If you paste into the box make sure to hit the space bar afterwards!</h4>
+      </div>
+      <br>
+      <textarea class="center"></textarea>
+      <br>
+      <button class="btn btn-default submit center">Submit</button>
+      <p id="num" class="text-center"></p>
+    </div>
+  </main>
+
+  <footer></footer>
+
+</body>
+
+<script type="text/javascript">
+  var str = "";
+  var y =30;
+  $(document).ready(function() {
+    //UPDATES WORD COUNTER
+    $("textarea").on("keypress", function() {
+      str = $("textarea").val();
+      var words = str.split(" ");
+      var num = words.length;
+      $("#num").text(num + " words");
+    });
+    //TELEPROMPTER DISPLAY
+    $(".submit").on("click", function() {
+      if (str == ""){
+        str = "You should add in some text next time!"
+      }
+      on();
+      scrollUp(y);
+    });
+    //CLOSE TELEPROMPTER
+    $("#close").on("click", function() {
+      $('#text').css('top', "30");
+      off();
+
+    });
+  });
+
+  function scrollUp(y) {
+    setTimeout(function() {
+      var newPos = y;
+      var height = $('#text').height();
+
+      if (newPos > -1 * height - 150) {
+        newPos--;
+        $('#text').css('top', newPos);
+
+        scrollUp(newPos);
+      }
+    }, 30);
+  };
+
+  function on() {
+    $("#overlay").css({
+      "display": "block"
+    });
+    $("#text").text(str);
+  }
+
+  function off() {
+    $("#overlay").css({
+      "display": "none"
+    });
+  }
+</script>
+
+</html>
