@@ -1,0 +1,16 @@
+html, body {
+  background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png");
+}
+.navbar {
+  padding: 15px;
+  border-radius: 0;
+}
+
+.add {
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+.modal-body {
+  padding: 7%;
+}
