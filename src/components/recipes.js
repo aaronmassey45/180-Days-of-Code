@@ -5,8 +5,8 @@ class Recipes extends Component {
   deleteRecipe(id){
     this.props.onDelete(id);
   }
-  editRecipe(id){
-    this.props.onEdit(id);
+  editRecipe(recipe,id){
+    this.props.onEdit(recipe,id);
   }
   render() {
     let recipesInfo;

@@ -3,10 +3,11 @@ import uuid from 'uuid';
 
 class Modal extends Component {
   constructor(){
-      super();
-      this.state = {
-        newRecipe: {}
-      };
+    super();
+
+    this.state = {
+      newRecipe: {}
+    };
   }
   handleSubmit(e) {
     e.preventDefault();

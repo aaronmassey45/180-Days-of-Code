@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import EditModal from './editmodal';
 
 class RecipeInfo extends Component {
   deleteRecipe(id){
     this.props.onDelete(id);
   }
-  editRecipe(id){
-    this.props.onEdit(id);
+  editRecipe(recipe,id){
+    this.props.onEdit(recipe,id);
   }
   render() {
     let ingredients;
@@ -30,9 +31,11 @@ class RecipeInfo extends Component {
                   {ingredients}
                 </ul>
                 <button className="btn btn-danger" onClick={this.deleteRecipe.bind(this, this.props.recipe.id)}>Delete</button>
+                <EditModal recipe={this.props.recipe} editRecipe={this.editRecipe.bind(this)} />
               </div>
             </div>
           </div>
+
         </div>
       );
     } else {
@@ -46,6 +49,7 @@ class RecipeInfo extends Component {
               {ingredients}
             </ul>
             <button className="btn btn-danger" onClick={this.deleteRecipe.bind(this, this.props.recipe.id)}>Delete</button>
+            <EditModal recipe={this.props.recipe} editRecipe={this.editRecipe.bind(this)} />
           </div>
         </div>
       </div>
