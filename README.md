@@ -2,7 +2,7 @@
 Allows users to create, read, update, delete recipes. Data persists as recipes are stored on local storage.
 
 ## Live Project
-View this project [here](http://aaronmassey.pro/180Websites/Day-9/)
+View this project [here](http://aaronmassey.pro/RecipeBox/)
 
 ## Tech/Framework
 * HTML
