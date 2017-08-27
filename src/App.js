@@ -9,11 +9,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      recipes: []
-    }
-  }
-  componentWillMount(){
-    this.setState({
       recipes: [
         {
           id: uuid.v4(),
@@ -37,24 +32,42 @@ class App extends Component {
           ingredients: ["flour","chicken","oil"]
         }
       ]
+    }
+  }
+  componentDidMount(){
+    const { recipes } = this.state;
+    let storage = JSON.parse(localStorage.getItem("_username_recipes"));
+    let stuff = storage && storage.length !== 0 ? storage : recipes;
+    this.setState({
+      recipes: stuff
     })
   }
   handleNewRecipe(recipe) {
     let {recipes} = this.state;
     recipes.push(recipe);
-    this.setState({ recipes });
+    this.setState({ recipes }, this.setStorage);
   }
   handleDeleteRecipe(id) {
     let {recipes} = this.state;
     let index = recipes.findIndex(x => x.id === id);
     recipes.splice(index, 1);
-    this.setState({ recipes });
+    this.setState({ recipes }, this.setStorage);
   }
   handleEditRecipe = (recipe,id) => {
     let {recipes} = this.state;
     let index = recipes.findIndex(x => x.id === id);
     recipes.splice(index, 1, recipe);
-    this.setState({ recipes });
+    this.setState({ recipes }, this.setStorage);
+  }
+  setStorage = () => {
+    let { recipes } = this.state;
+    let list = [];
+    if (recipes) {
+      recipes.map(recipe => {
+        list.push(recipe);
+      });
+      localStorage.setItem("_username_recipes", JSON.stringify(list));
+    }
   }
 
   render() {

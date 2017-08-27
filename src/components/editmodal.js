@@ -18,14 +18,13 @@ export default class EditModal extends Component {
       img: img,
       servings: this.refs.servings.value,
       ingredients: this.refs.ingredients.value.split(",")
-    }}, function() {
+    }}, () => {
       let {recipe} = this.state;
       this.props.editRecipe(recipe, recipe.id);
     });
   }
   render() {
     const {title, img, servings, ingredients,id} = this.props.recipe;
-    console.log(title);
     return (
       <div>
         <button className="btn btn-primary" data-toggle='modal' data-target={`#${id}`}>Edit</button>

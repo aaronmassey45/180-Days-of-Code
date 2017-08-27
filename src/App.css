@@ -1,24 +1,33 @@
+.add {
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+body {
+  background-image: url("http://cdn.backgroundhost.com/backgrounds/subtlepatterns/retina_wood.png");
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.btn-block {
+  margin-top: 10px;
 }
 
-.App-intro {
-  font-size: large;
+.btn:focus {
+  outline: 0;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.modal-body {
+  padding: 7%;
+}
+
+.navbar {
+  padding: 15px;
+  border-radius: 0;
+}
+
+.RecipeInfo:nth-child(4n+1) {
+  clear: both;
 }

@@ -11,34 +11,25 @@ class Modal extends Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    if (this.refs.img.value === ''){
-      this.setState({newRecipe: {
-        id: uuid.v4(),
-        title: this.refs.title.value,
-        img: "https://dummyimage.com/280X200/a6a6a6/000000&text=No+Food+Porn",
-        servings: this.refs.servings.value,
-        ingredients: this.refs.ingredients.value.split(",")
-      }}, function() {
-        //console.log(this.state);
-        this.props.addRecipe(this.state.newRecipe);
-      });
-    } else {
-      this.setState({newRecipe: {
-        id: uuid.v4(),
-        title: this.refs.title.value,
-        img: this.refs.img.value,
-        servings: this.refs.servings.value,
-        ingredients: this.refs.ingredients.value.split(",")
-      }}, function() {
-        //console.log(this.state);
-        this.props.addRecipe(this.state.newRecipe);
-      });
-    }
+    let img = this.refs.img.value ? this.refs.img.value :'https://dummyimage.com/280X200/a6a6a6/000000&text=No+Food+Porn';
+    this.setState({
+      recipe: {
+      id: uuid.v4(),
+      title: this.refs.title.value,
+      img: img,
+      servings: this.refs.servings.value,
+      ingredients: this.refs.ingredients.value.split(",")
+    }}, () => {
+      let {recipe} = this.state;
+      this.props.addRecipe(recipe, recipe.id);
+    });
+
+    this.refs.title.value = this.refs.img.value = this.refs.servings.value = this.refs.ingredients.value = null;
   }
   render() {
     return (
       <div>
-        <button type='button' className='btn btn-info btn-lg add' data-toggle='modal' data-target='#myModal'>+ Add A Recipe</button>
+        <button type='button' className='btn btn-success btn-lg add' data-toggle='modal' data-target='#myModal'>+ Add A Recipe</button>
         <div id='myModal' className='modal fade' role='dialog'>
           <div className='modal-dialog'>
             <div className='modal-content'>
