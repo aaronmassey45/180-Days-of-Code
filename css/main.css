@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald:700|Cinzel:900|Nunito");
+* {
+  margin: 0;
+}
+
+.bg-grey {
+  background-color: grey;
+  padding: 15px;
+  color: black;
+}
+
+.bg-grey a+a {
+  border-left: 1px solid black;
+}
+
+.bg-lgrey {
+  background-color: lightgrey;
+  padding: 15px;
+}
+
+.cinzel {
+  font-family: 'Cinzel', serif;
+}
+
+.days {
+  padding: 20px;
+}
+
+footer {
+  background-color: #D2B887;
+  padding: 10px;
+  border: none;
+}
+
+.gold, .gold a:link, .gold a:visited, .gold a:active, .days a:hover {
+  color: #D2B887;
+}
+
+header {
+  padding: 20px;
+  background: url("https://source.unsplash.com/7Ym9rpYtSdA") no-repeat center center;
+  background-size: cover;
+}
+
+#header {
+  margin-top: 70px;
+}
+
+#header img {
+  display: block;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.header-section {
+  font-size: 20px;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: 'Oswald', sans-serif;
+}
+
+html body main {
+  background-color: black;
+}
+
+.img-responsive {
+  width: 80%;
+}
+
+.logo {
+  color: #D2B887;
+  font-size: 50px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+main {
+  font-family: 'Nunito', sans-serif;
+}
+
+.md-font {
+  font-size: 25px;
+}
+
+.navbar-fixed-top {
+  background: #D2B887;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.navbar-fixed-top a {
+  color: black;
+}
+
+.overlay {
+  position: fixed;
+  display: none;
+  width: 50%;
+  height: 50%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.pad-sm {
+  padding: 20px 0;
+}
+
+.pad-lg {
+  padding: 35px 0;
+}
+
+.sm-font {
+  font-size: 18px;
+}
+
+.thumbnail {
+  padding: 8px;
+  background-color: black;
+  color: #D2B887;
+}
+
+.thumbnail img {
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width:768px) {
+  header .navbar {
+    background-color: transparent;
+    border-bottom: 0.5px solid white;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: white;
+    font-weight: 700;
+    padding: 0;
+    transition-duration: 0.5s;
+  }
+
+  header .collapse-navbar {
+    padding: 10px;
+    background-color: #D2B887;
+    transition-duration: 0.5s;
+    color: black;
+    border: none;
+  }
+
+  header .collapse-navbar a, header .collapse-navbar a:link {
+    color: black;
+  }
+
+  .navbar a, .navbar a:link, .navbar a:active {
+    color: white;
+  }
+
+  .navbar a:hover {
+    color: black;
+  }
+}
+
+@media screen and (max-width:400px) {
+  header .navbar-brand {
+    font-size: 14px;
+    margin: 8px 0;
+  }
+}
