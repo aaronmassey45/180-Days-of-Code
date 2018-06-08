@@ -1,13 +1,27 @@
-import './App.css';
 import React, { Component } from 'react';
 import marked from 'marked';
 import Navbar from './navbar';
+import placeholder from './placeholder';
+
+const renderer = new marked.Renderer();
+renderer.link = (href, title, text) => {
+  return `<a target='_blank' href="${href}">${text}</a>`;
+};
+
+const markedOptions = {
+  renderer,
+  breaks: true,
+  tables: true,
+};
 
 class App extends Component {
   state = {
-    value:
-      'Heading\n=======\n\nSub-heading\n-----------\n \n### Another deeper heading\n \nParagraphs are separated\nby a blank line.\n\nLeave 2 spaces at the end of a line to do a  \nline break\n\nText attributes *italic*, **bold**, \n`monospace`, ~~strikethrough~~ .\n\nShopping list:\n\n  * apples\n  * oranges\n  * pears\n\nNumbered list:\n\n  1. apples\n  2. oranges\n  3. pears\n\nThe rain---not the reign---in\nSpain.\n\n *[Herman Fassett](https://www.freecodecamp.org/hermanfassett)*',
+    value: placeholder,
   };
+
+  componentDidMount() {
+    window.marked = marked;
+  }
 
   handleChange = event => {
     this.setState({ value: event.target.value });
@@ -22,11 +36,19 @@ class App extends Component {
           style={{ marginRight: 'auto', marginLeft: 'auto' }}
         >
           <div className="col-sm-6">
-            <textarea value={this.state.value} onChange={this.handleChange} />
+            <textarea
+              id="editor"
+              value={this.state.value}
+              onChange={this.handleChange}
+            />
           </div>
           <div
+            id="preview"
             className="col-sm-6"
-            dangerouslySetInnerHTML={{ __html: marked(this.state.value) }}
+            dangerouslySetInnerHTML={{
+              __html: marked(this.state.value, markedOptions),
+            }}
+            style={{ height: '80vh', overflowY: 'scroll' }}
           />
         </div>
       </div>
