@@ -2,7 +2,7 @@
   "name": "day-8",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/180Websites/Day-08/",
+  "homepage": "https://aaronmassey.pro/180Websites/Day-08/",
   "dependencies": {
     "marked": "^0.4.0",
     "react": "^15.6.1",
