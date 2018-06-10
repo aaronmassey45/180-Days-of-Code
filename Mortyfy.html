@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Morty-fied | 180 Websites</title>
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/jquery.js" charset="utf-8"></script>
+  <script src="js/bootstrap.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="http://aaronmassey.pro/" class="navbar-brand">180 Websites | Aaron M.</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="https://medium.com/@aaronmassey45">Blog</a></li>
+            <li><a href="https://github.com/aaronmassey45">Github</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="row text">
+      <div class="col-sm-9">
+        <div class="container">
+          <div class="text-center">
+            <h2>Welcome to Earth Dimension C-137!</h2>
+            <h4 id="text">Click on the portal to receive your Morty!</h4>
+          </div>
+          <div class="imgs">
+            <img src="images/portal1.png" alt="portal" class="portal img-responsive rotate">
+            <div id="mortyfied"></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 text-center">
+        <p>Season 3 of Rick and Morty Returns July 30th!</p>
+        <p>
+          <img src="images/rick1.png" alt="Rick head!" class="img-responsive">
+        </p>
+        <p>Click <a href="http://spacecoma.deviantart.com/art/Morty-Maker-528534239">here</a> if you want to be "Morty"-fied!</p>
+      </div>
+    </div>
+  </main>
+
+</body>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var anim = ["fflip", "move", "bflip", "move", "shrink", "move", "top2bot", "move"];
+    var translated = false;
+    var x, y;
+    //What to do on portal click
+    $(".portal").click(function() {
+      $(this).fadeOut(1000);
+      $("#mortyfied").delay(1000).queue(function(n) {
+        $(this).html("<img src='images/mortyfied1.png' alt='mortyfied' class='mortyfied img-responsive'>");
+        n();
+      });
+      $("#text").delay(1000).queue(function(n) {
+        $(this).text("Morty was busy so Rick sent me instead!");
+        n();
+      }).delay(2500).queue(function(n) {
+        $(this).html("Click the button below to watch me do animation tricks!<br/><button class='tricks btn btn-lg'>Aaron tricks!</button>");
+        n();
+      });
+    });
+
+    //What to do on button click
+    $(document).on('click', '.tricks', function() {
+      var rand = Math.floor(Math.random() * 8);
+      var trick = anim[rand];
+      if (trick == "move") {
+        translated = true;
+        x = randomInt(-100, 100);
+        y = randomInt(-100, 100);
+        $(".mortyfied").css({
+          "transform": "translate(" + x + "px," + y + "px)"
+        })
+      } else {
+        $(".mortyfied").addClass(trick).delay(3001).queue(function(n) {
+          $(this).removeClass(trick);
+          n();
+        });
+      }
+    });
+  });
+
+  function randomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+  }
+</script>
+
+</html>
