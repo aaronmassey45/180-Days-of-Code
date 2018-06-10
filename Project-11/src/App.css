@@ -1,0 +1,64 @@
+body {
+  background: url('https://source.unsplash.com/qVotvbsuM_c') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.App {
+  text-align: center;
+}
+
+.navbar {
+  padding: 15px;
+}
+.navbar .btn {
+  color: black;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 120px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.Title {
+  color: white;
+  padding: 10px;
+}
+
+.Search {
+  margin-top: 25px;
+}
+
+.btn-sw {
+  background: grey;
+  color: black;
+}
+
+
+.SearchComponent, .SearchComponent a:link, .SearchComponent a:visited {
+  font-size: 40px;
+  color: black;
+  text-shadow: -1px 0 yellow, 0 1px yellow, 1px 0 yellow, 0 -1px yellow;
+  padding: 10px;
+  border-radius: 10px;
+}
+.col-sm-6, .SearchComponent {
+  margin-top: 30px;
+}

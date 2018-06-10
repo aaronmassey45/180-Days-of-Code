@@ -1,0 +1,84 @@
+body {
+  background: url("https://source.unsplash.com/qVotvbsuM_c") no-repeat 50% fixed;
+  background-size: cover
+}
+
+.App {
+  text-align: center
+}
+
+.navbar {
+  padding: 15px
+}
+
+.navbar .btn {
+  color: #000
+}
+
+.App-logo {
+  -webkit-animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 20s linear;
+  height: 120px
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: #fff
+}
+
+.App-intro {
+  font-size: large
+}
+
+@-webkit-keyframes App-logo-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn)
+  }
+}
+
+@keyframes App-logo-spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+  to {
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn)
+  }
+}
+
+.Title {
+  color: #fff;
+  padding: 10px
+}
+
+.Search {
+  margin-top: 25px
+}
+
+.btn-sw {
+  background: grey;
+  color: #000
+}
+
+.SearchComponent, .SearchComponent a:link, .SearchComponent a:visited {
+  font-size: 40px;
+  color: #000;
+  text-shadow: -1px 0 #ff0, 0 1px #ff0, 1px 0 #ff0, 0 -1px #ff0;
+  padding: 10px;
+  border-radius: 10px
+}
+
+.col-sm-6, .SearchComponent {
+  margin-top: 30px
+}
+
+
+/*# sourceMappingURL=main.b3c840e8.css.map*/
